@@ -175,11 +175,12 @@ class Phone(Instance):
     pass
 
 class Phones(Resource):
-    def verification_start(self, phone_number, country_code, via = 'sms', locale = None):
+    def verification_start(self, phone_number, country_code, via = 'sms', locale = None, custom_message = ''):
         options = {
             'phone_number': phone_number,
             'country_code': country_code,
-            'via': via
+            'via': via,
+            'custom_message': custom_message
         }
 
         if locale:
